@@ -1,0 +1,1334 @@
+
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AyurVani | Herbal Wellness</title>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Noto+Sans+Devanagari:wght@400;500;600;700;800&display=swap');
+
+:root {
+  --green: #245b35;
+  --dark-green: #153d27;
+  --light-green: #e8f3e7;
+  --cream: #faf6ed;
+  --orange: #f28a16;
+  --text: #25342a;
+  --white: #ffffff;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 100px;
+}
+
+body {
+  font-family: 'DM Sans', 'Noto Sans Devanagari', sans-serif;
+  background: var(--cream);
+  color: var(--text);
+  line-height: 1.8;
+  overflow-x: hidden;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button, input, textarea, select {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+img {
+  display: block;
+  width: 100%;
+  object-fit: cover;
+}
+
+.container {
+  width: min(1120px, 90%);
+  margin: auto;
+}
+
+section {
+  padding: 75px 0;
+}
+
+.section-tag {
+  color: var(--green);
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: 2px;
+  margin-bottom: 12px;
+}
+
+.section-title {
+  color: var(--dark-green);
+  font-size: clamp(27px, 4vw, 43px);
+  line-height: 1.4;
+  margin-bottom: 18px;
+}
+
+.section-text {
+  max-width: 720px;
+  color: #5a665c;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 14px 25px;
+  background: var(--orange);
+  color: white;
+  border: none;
+  border-radius: 50px;
+  font-weight: 700;
+  transition: .3s;
+}
+
+.btn:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 25px #f28a1638;
+}
+
+header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: rgba(250, 246, 237, .96);
+  backdrop-filter: blur(14px);
+  box-shadow: 0 3px 20px #183b2410;
+}
+
+.nav-wrap {
+  min-height: 82px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 25px;
+}
+
+.logo {
+  font-size: 29px;
+  color: var(--green);
+  font-weight: 800;
+  white-space: nowrap;
+}
+
+nav {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+}
+
+nav a {
+  font-size: 16px;
+  font-weight: 700;
+  position: relative;
+  padding: 9px 0;
+  transition: .3s;
+}
+
+nav a:hover,
+nav a.active {
+  color: var(--orange);
+}
+
+nav a::after {
+  content: "";
+  height: 3px;
+  width: 0;
+  background: var(--orange);
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  border-radius: 10px;
+  transition: width .3s;
+}
+
+nav a:hover::after,
+nav a.active::after {
+  width: 100%;
+}
+
+.menu-btn {
+  display: none;
+  background: var(--green);
+  color: white;
+  border: none;
+  padding: 7px 12px;
+  border-radius: 9px;
+  font-size: 24px;
+}
+
+/* HERO SECTION */
+
+.hero {
+  padding: 75px 0 65px;
+  background:
+    radial-gradient(circle at 85% 15%, #c9e5c4 0, transparent 32%),
+    linear-gradient(130deg, #eff7e9, #d9eed8);
+  overflow: hidden;
+}
+
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1.08fr .92fr;
+  gap: 45px;
+  align-items: center;
+}
+
+.hero h1 {
+  font-size: clamp(30px, 4.2vw, 52px);
+  line-height: 1.45;
+  color: var(--dark-green);
+  margin-bottom: 22px;
+}
+
+.hero p {
+  font-size: 17px;
+  margin-bottom: 16px;
+  color: #435748;
+}
+
+.hero .btn {
+  margin-top: 12px;
+}
+
+.hero-note {
+  display: inline-block;
+  padding: 7px 13px;
+  margin-bottom: 18px;
+  background: white;
+  color: var(--green);
+  border-radius: 30px;
+  font-weight: 700;
+  font-size: 13px;
+}
+
+.hero-images {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 17px;
+  align-items: center;
+}
+
+.hero-images img {
+  height: 330px;
+  border-radius: 28px;
+  box-shadow: 0 18px 40px #244a2b22;
+  transition: transform .5s;
+}
+
+.hero-images img:nth-child(2) {
+  margin-top: 45px;
+}
+
+.hero-images img:hover {
+  transform: translateY(-8px) rotate(1deg);
+}
+
+/* TRUST STRIP */
+
+.trust-strip {
+  background: var(--dark-green);
+  color: white;
+  padding: 20px 0;
+}
+
+.trust-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  text-align: center;
+}
+
+.trust-grid strong {
+  display: block;
+  font-size: 16px;
+}
+
+.trust-grid span {
+  font-size: 13px;
+  color: #d2e5d2;
+}
+
+/* CARDS */
+
+.grid-2 {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 25px;
+}
+
+.grid-3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.card {
+  padding: 28px;
+  background: white;
+  border: 1px solid #e5ebdf;
+  border-radius: 22px;
+  box-shadow: 0 8px 30px #203c1c08;
+  transition: transform .35s, box-shadow .35s;
+}
+
+.card:hover {
+  transform: translateY(-7px);
+  box-shadow: 0 18px 38px #203c1c12;
+}
+
+.card-icon {
+  font-size: 34px;
+  margin-bottom: 12px;
+}
+
+.card h3 {
+  color: var(--green);
+  font-size: 21px;
+  margin-bottom: 9px;
+}
+
+.card p {
+  color: #657166;
+  font-size: 15px;
+}
+
+.herb-card img {
+  height: 190px;
+  border-radius: 15px;
+  margin-bottom: 17px;
+}
+
+.herb-card {
+  overflow: hidden;
+}
+
+/* HOW IT WORKS */
+
+.how-section {
+  background: var(--light-green);
+}
+
+.step-number {
+  display: inline-flex;
+  width: 43px;
+  height: 43px;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: var(--green);
+  color: white;
+  font-weight: 800;
+  margin-bottom: 15px;
+}
+
+/* DAILY ROUTINE */
+
+.routine-list {
+  display: grid;
+  gap: 18px;
+  margin-top: 30px;
+}
+
+.routine-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 18px;
+  background: white;
+  border-radius: 17px;
+  padding: 20px;
+  border: 1px solid #e6ebdf;
+}
+
+.routine-icon {
+  font-size: 27px;
+}
+
+.routine-item h3 {
+  color: var(--green);
+  margin-bottom: 5px;
+}
+
+/* BEFORE AFTER */
+
+.before-after {
+  background: var(--dark-green);
+  color: white;
+}
+
+.before-after .section-title {
+  color: white;
+}
+
+.before-after .section-text {
+  color: #dce9dc;
+}
+
+.before-after .card h3 {
+  color: var(--green);
+}
+
+.before-after .card {
+  color: var(--text);
+}
+
+/* CUSTOMER REVIEWS */
+
+.review-card {
+  position: relative;
+}
+
+.stars {
+  color: #efa51b;
+  letter-spacing: 3px;
+  margin-bottom: 12px;
+}
+
+.review-name {
+  display: block;
+  margin-top: 15px;
+  color: var(--green);
+  font-weight: 700;
+}
+
+/* QUALITY */
+
+.quality-section {
+  background: #f0e9d9;
+}
+
+.quality-card {
+  text-align: center;
+}
+
+.quality-card .card-icon {
+  font-size: 36px;
+}
+
+/* OFFER */
+
+.offer-box {
+  background: linear-gradient(135deg, #17452b, #347647);
+  color: white;
+  border-radius: 28px;
+  padding: 38px;
+}
+
+.offer-box h2 {
+  font-size: clamp(25px, 4vw, 36px);
+  margin-bottom: 15px;
+}
+
+.offer-list {
+  list-style: none;
+  margin: 22px 0;
+}
+
+.offer-list li {
+  margin: 10px 0;
+}
+
+/* ORDER FORM */
+
+.order-section {
+  background: var(--light-green);
+}
+
+.order-form {
+  max-width: 700px;
+  margin: 30px auto 0;
+  background: white;
+  padding: 32px;
+  border-radius: 24px;
+  box-shadow: 0 15px 40px #153d2710;
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  margin-bottom: 18px;
+}
+
+.form-group.full {
+  grid-column: 1 / -1;
+}
+
+.form-group label {
+  font-weight: 700;
+  color: var(--dark-green);
+}
+
+.form-group input,
+.form-group textarea,
+.form-group select {
+  width: 100%;
+  padding: 13px 14px;
+  border: 1px solid #d5dfd2;
+  border-radius: 11px;
+  background: #fcfdfb;
+  outline: none;
+}
+
+.form-group input:focus,
+.form-group textarea:focus,
+.form-group select:focus {
+  border-color: var(--green);
+  box-shadow: 0 0 0 3px #245b3518;
+}
+
+.form-message {
+  margin-top: 15px;
+  font-weight: 700;
+  color: var(--green);
+}
+
+/* FAQ */
+
+.faq-list {
+  max-width: 850px;
+  margin: 30px auto 0;
+}
+
+.faq-item {
+  background: white;
+  border-radius: 14px;
+  margin-bottom: 13px;
+  border: 1px solid #e4e9df;
+  overflow: hidden;
+}
+
+.faq-question {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+  padding: 19px;
+  border: none;
+  background: white;
+  color: var(--dark-green);
+  font-weight: 700;
+  text-align: left;
+}
+
+.faq-answer {
+  display: none;
+  padding: 0 19px 19px;
+  color: #5c695e;
+}
+
+.faq-item.open .faq-answer {
+  display: block;
+}
+
+.faq-item.open .faq-icon {
+  transform: rotate(45deg);
+}
+
+/* FINAL MESSAGE */
+
+.final-message {
+  background: #e2f0df;
+  text-align: center;
+}
+
+.final-message h2 {
+  color: var(--dark-green);
+  font-size: clamp(28px, 4vw, 42px);
+  margin-bottom: 20px;
+}
+
+.final-message p {
+  margin-bottom: 12px;
+}
+
+/* FOOTER */
+
+footer {
+  background: #102d1d;
+  color: white;
+  padding: 45px 0 20px;
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr 1fr;
+  gap: 35px;
+  margin-bottom: 30px;
+}
+
+footer h3 {
+  margin-bottom: 15px;
+}
+
+footer p,
+footer a {
+  color: #d2dfd2;
+  font-size: 14px;
+}
+
+.footer-links {
+  display: grid;
+  gap: 8px;
+}
+
+.footer-bottom {
+  border-top: 1px solid #ffffff25;
+  padding-top: 18px;
+  text-align: center;
+  color: #bdcdbd;
+  font-size: 13px;
+}
+
+.disclaimer {
+  font-size: 12px;
+  color: #d2dfd2;
+  margin-top: 20px;
+}
+
+/* ANIMATIONS */
+
+.fade-up {
+  animation: fadeUp .8s ease both;
+}
+
+.fade-down {
+  animation: fadeDown .7s ease both;
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(25px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.reveal {
+  opacity: 0;
+  transform: translateY(25px);
+  transition: opacity .7s ease, transform .7s ease;
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* MOBILE RESPONSIVE */
+
+@media (max-width: 850px) {
+  .nav-wrap {
+    min-height: 72px;
+  }
+
+  .menu-btn {
+    display: block;
+  }
+
+  nav {
+    display: none;
+    position: absolute;
+    top: 72px;
+    left: 0;
+    width: 100%;
+    padding: 20px 5%;
+    background: var(--cream);
+    box-shadow: 0 12px 20px #173d2515;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 8px;
+  }
+
+  nav.open {
+    display: flex;
+    animation: fadeDown .3s ease both;
+  }
+
+  nav a {
+    padding: 10px 0;
+    font-size: 17px;
+  }
+
+  .hero {
+    padding-top: 45px;
+  }
+
+  .hero-grid {
+    grid-template-columns: 1fr;
+    gap: 35px;
+  }
+
+  .hero-images img {
+    height: 280px;
+  }
+
+  .grid-3 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .footer-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 550px) {
+  section {
+    padding: 55px 0;
+  }
+
+  .container {
+    width: 90%;
+  }
+
+  .logo {
+    font-size: 24px;
+  }
+
+  .hero h1 {
+    font-size: 32px;
+  }
+
+  .hero p {
+    font-size: 15px;
+  }
+
+  .hero-images {
+    gap: 12px;
+  }
+
+  .hero-images img {
+    height: 225px;
+    border-radius: 20px;
+  }
+
+  .trust-grid {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+
+  .grid-2,
+  .grid-3 {
+    grid-template-columns: 1fr;
+  }
+
+  .card {
+    padding: 22px;
+  }
+
+  .form-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .form-group.full {
+    grid-column: auto;
+  }
+
+  .order-form {
+    padding: 22px;
+  }
+
+  .offer-box {
+    padding: 25px;
+  }
+
+  .footer-grid {
+    grid-template-columns: 1fr;
+    gap: 25px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: .01ms !important;
+    transition-duration: .01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <div class="container nav-wrap">
+    <a href="#home" class="logo"><span>🌿</span> AyurVani</a>
+
+    <button class="menu-btn" id="menuBtn"
+      aria-label="Open navigation"
+      aria-expanded="false">☰</button>
+
+    <nav id="navbar">
+      <a href="#home" class="active">Home</a>
+      <a href="#benefits">Benefits</a>
+      <a href="#herbs">Herbs</a>
+      <a href="#routine">Routine</a>
+      <a href="#guidance">Guidance</a>
+      <a href="#reviews">Reviews</a>
+      <a href="#contact">Order Now</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+<section class="hero" id="home">
+  <div class="container hero-grid">
+    <div class="fade-down">
+      <span class="hero-note">🌱 Natural Wellness • Caring Support</span>
+
+      <h1>क्या आपका बच्चा भी बोलते समय हकलाता है?</h1>
+
+      <p>
+        हर बच्चे को अपनी बात कहने के लिए समय, धैर्य और
+        सही सहयोग मिलना चाहिए।
+      </p>
+
+      <p>
+        बच्चे को बिना रोके सुनें और जरूरत होने पर योग्य
+        speech-language therapist से सलाह लें।
+      </p>
+
+      <a href="#benefits" class="btn">
+        और जानें <span>→</span>
+      </a>
+    </div>
+
+    <div class="hero-images fade-up">
+      <img
+        src="https://images.unsplash.com/photo-1503454537195-1dcabb73ffb9?auto=format&fit=crop&w=600&q=85"
+        alt="खेलता हुआ बच्चा">
+
+      <img
+        src="https://images.unsplash.com/photo-1608571423902-eed4a5ad8108?auto=format&fit=crop&w=600&q=85"
+        alt="हर्बल स्किनकेयर बोतल">
+    </div>
+  </div>
+</section>
+
+<div class="trust-strip">
+  <div class="container trust-grid">
+    <div>
+      <strong>🌿 Herbal Information</strong>
+      <span>सामग्री की जानकारी</span>
+    </div>
+    <div>
+      <strong>💚 Parent Support</strong>
+      <span>बच्चे के साथ धैर्य</span>
+    </div>
+    <div>
+      <strong>👩‍⚕️ Professional Guidance</strong>
+      <span>जरूरत पर विशेषज्ञ की सलाह</span>
+    </div>
+  </div>
+</div>
+
+<section id="benefits">
+  <div class="container">
+    <p class="section-tag">01 • Understanding</p>
+    <h2 class="section-title">हकलापन का असर सिर्फ बोलने तक नहीं रहता</h2>
+    <p class="section-text">
+      कुछ बच्चों को बोलते समय कठिनाई के साथ घबराहट या
+      लोगों के सामने बात करने में परेशानी भी हो सकती है।
+      हर बच्चे का अनुभव अलग होता है।
+    </p>
+
+    <div class="grid-3" style="margin-top:30px">
+      <article class="card reveal">
+        <div class="card-icon">💬</div>
+        <h3>बोलते समय शब्द दोहराना</h3>
+        <p>बच्चा कुछ शब्द या आवाजें बार-बार दोहरा सकता है।</p>
+      </article>
+
+      <article class="card reveal">
+        <div class="card-icon">🤝</div>
+        <h3>सही सहयोग</h3>
+        <p>बच्चे को ध्यान से सुनना और उसे पूरा समय देना जरूरी है।</p>
+      </article>
+
+      <article class="card reveal">
+        <div class="card-icon">💚</div>
+        <h3>आत्मविश्वास</h3>
+        <p>बच्चे को बिना दबाव अपनी बात कहने के लिए प्रोत्साहित करें।</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="how-section" id="how">
+  <div class="container">
+    <p class="section-tag">02 • How it works</p>
+    <h2 class="section-title">AYURVANI कैसे Support करता है?</h2>
+    <p class="section-text">
+      AyurVani का उद्देश्य माता-पिता को सामान्य herbal
+      जानकारी और एक supportive daily routine की जानकारी देना है।
+    </p>
+
+    <div class="grid-2" style="margin-top:30px">
+      <article class="card reveal">
+        <div class="step-number">01</div>
+        <h3>🧠 Brain Wellness Information</h3>
+        <p>पारंपरिक जड़ी-बूटियों के बारे में सामान्य जानकारी।</p>
+      </article>
+
+      <article class="card reveal">
+        <div class="step-number">02</div>
+        <h3>⚡ Nervous System Wellness</h3>
+        <p>स्वास्थ्य संबंधी जानकारी और विशेषज्ञ की सलाह का महत्व।</p>
+      </article>
+
+      <article class="card reveal">
+        <div class="step-number">03</div>
+        <h3>🎯 Focus & Mental Wellness</h3>
+        <p>बच्चे की भावनाओं को समझें और उसे सकारात्मक सहयोग दें।</p>
+      </article>
+
+      <article class="card reveal">
+        <div class="step-number">04</div>
+        <h3>🌿 Daily Wellness</h3>
+        <p>बच्चे के लिए शांत और नियमित दिनचर्या बनाने में सहयोग।</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section id="herbs">
+  <div class="container">
+    <p class="section-tag">03 • Herbal Information</p>
+    <h2 class="section-title">AyurVani में क्या है?</h2>
+    <p class="section-text">
+      नीचे कुछ पारंपरिक आयुर्वेदिक जड़ी-बूटियों की सामान्य
+      जानकारी दी गई है। ये हकलाने का प्रमाणित इलाज नहीं हैं।
+    </p>
+
+    <div class="grid-2" style="margin-top:30px">
+      <article class="card herb-card reveal">
+        <img
+          src="https://images.unsplash.com/photo-1515586000433-45406d8e6662?auto=format&fit=crop&w=650&q=80"
+          alt="हरी जड़ी-बूटियां">
+        <h3>🌿 Brahmi</h3>
+        <p>आयुर्वेद में पारंपरिक रूप से इस्तेमाल होने वाली जड़ी-बूटी।</p>
+      </article>
+
+      <article class="card herb-card reveal">
+        <img
+          src="https://images.unsplash.com/photo-1540420773420-3366772f4999?auto=format&fit=crop&w=650&q=80"
+          alt="हरी पत्तियां">
+        <h3>🌿 Shankhpushpi</h3>
+        <p>पारंपरिक आयुर्वेदिक उपयोगों के लिए जानी जाने वाली जड़ी-बूटी।</p>
+      </article>
+
+      <article class="card herb-card reveal">
+        <img
+          src="https://images.unsplash.com/photo-1615485290382-441e4d049cb5?auto=format&fit=crop&w=650&q=80"
+          alt="प्राकृतिक हर्बल सामग्री">
+        <h3>🌿 Ashwagandha</h3>
+        <p>आयुर्वेद में इस्तेमाल होने वाला एक पारंपरिक पौधा।</p>
+      </article>
+
+      <article class="card herb-card reveal">
+        <img
+          src="https://images.unsplash.com/photo-1501004318641-b39e6451bec6?auto=format&fit=crop&w=650&q=80"
+          alt="हरा पौधा">
+        <h3>🌿 Jatamansi</h3>
+        <p>पारंपरिक आयुर्वेद में उपयोग की जाने वाली जड़ी-बूटी।</p>
+      </article>
+    </div>
+
+    <p class="section-text" style="margin-top:22px">
+      ध्यान दें: बच्चों को कोई भी herbal supplement देने से पहले
+      योग्य डॉक्टर से सलाह लें।
+    </p>
+  </div>
+</section>
+
+<section class="how-section" id="routine">
+  <div class="container">
+    <p class="section-tag">04 • Daily Routine</p>
+    <h2 class="section-title">AyurVani के साथ Daily Support Routine</h2>
+    <p class="section-text">
+      बच्चे की सुविधा के अनुसार एक शांत और सकारात्मक
+      दिनचर्या अपनाएं। बोलने में कठिनाई के लिए विशेषज्ञ की
+      सलाह भी महत्वपूर्ण है।
+    </p>
+
+    <div class="routine-list">
+      <div class="routine-item reveal">
+        <div class="routine-icon">🌅</div>
+        <div>
+          <h3>सुबह — Healthy Start</h3>
+          <p>संतुलित नाश्ता, आरामदायक शुरुआत और बच्चे से प्यार से बात करें।</p>
+        </div>
+      </div>
+
+      <div class="routine-item reveal">
+        <div class="routine-icon">🗣️</div>
+        <div>
+          <h3>दिन में — Speaking Practice</h3>
+          <p>बच्चे को अपनी गति से बोलने दें। उसकी बात बीच में न काटें और शब्द पूरे करने का दबाव न डालें।</p>
+        </div>
+      </div>
+
+      <div class="routine-item reveal">
+        <div class="routine-icon">🏡</div>
+        <div>
+          <h3>शाम — Family Conversation</h3>
+          <p>कहानी पढ़ें, बच्चे की बात सुनें और साथ में अच्छा समय बिताएं।</p>
+        </div>
+      </div>
+
+      <div class="routine-item reveal">
+        <div class="routine-icon">🌙</div>
+        <div>
+          <h3>रात — Relaxed Bedtime</h3>
+          <p>आरामदायक bedtime routine और पर्याप्त नींद का ध्यान रखें।</p>
+        </div>
+      </div>
+
+      <div class="routine-item reveal">
+        <div class="routine-icon">📋</div>
+        <div>
+          <h3>हर सप्ताह — Progress Review</h3>
+          <p>बच्चे की जरूरतों पर ध्यान दें और जरूरत पड़ने पर speech-language therapist से सलाह लें।</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Part 2 continues below -->
+</main>
+  
+      <ul class="offer-list">
+        <li>✓ बच्चे की जरूरतों को समझें</li>
+        <li>✓ Daily wellness routine अपनाएं</li>
+        <li>✓ जरूरत होने पर speech-language therapist से सलाह लें</li>
+      </ul>
+
+      <a href="#contact" class="btn">अभी जानकारी लें →</a>
+    </div>
+  </div>
+</section>
+
+<!-- ORDER / CONTACT FORM -->
+
+<section class="order-section" id="contact">
+  <div class="container">
+    <p class="section-tag">10 • Get in Touch</p>
+    <h2 class="section-title" style="text-align:center">
+      AyurVani से संपर्क करें
+    </h2>
+
+    <p class="section-text" style="text-align:center;margin:auto">
+      अपना विवरण भरें। यह demo form है और अभी किसी server
+      पर जानकारी नहीं भेजता।
+    </p>
+
+    <form class="order-form" id="contactForm">
+      <div class="form-grid">
+        <div class="form-group">
+          <label for="customerName">आपका नाम</label>
+          <input
+            type="text"
+            id="customerName"
+            name="name"
+            placeholder="अपना नाम लिखें"
+            required>
+        </div>
+
+        <div class="form-group">
+          <label for="customerEmail">Email</label>
+          <input
+            type="email"
+            id="customerEmail"
+            name="email"
+            placeholder="name@example.com"
+            required>
+        </div>
+
+        <div class="form-group full">
+          <label for="customerPhone">Phone Number (Optional)</label>
+          <input
+            type="tel"
+            id="customerPhone"
+            name="phone"
+            placeholder="अपना फोन नंबर लिखें">
+        </div>
+
+        <div class="form-group full">
+          <label for="customerMessage">आपका संदेश</label>
+          <textarea
+            id="customerMessage"
+            name="message"
+            rows="4"
+            placeholder="आप क्या जानना चाहते हैं?"></textarea>
+        </div>
+      </div>
+
+      <button type="submit" class="btn">
+        Submit Details →
+      </button>
+
+      <p class="form-message" id="formMessage" aria-live="polite"></p>
+    </form>
+  </div>
+</section>
+
+<!-- FAQ -->
+
+<section id="faq">
+  <div class="container">
+    <p class="section-tag">11 • Frequently Asked Questions</p>
+    <h2 class="section-title" style="text-align:center">
+      आपके सवाल
+    </h2>
+
+    <div class="faq-list">
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false">
+          क्या हकलाने में professional help मिल सकती है?
+          <span class="faq-icon">＋</span>
+        </button>
+        <div class="faq-answer">
+          हाँ। Speech-language therapist बोलने की कठिनाई का
+          मूल्यांकन कर सकता है और बच्चे की जरूरतों के अनुसार
+          सहायता की योजना बना सकता है।
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false">
+          क्या herbal products हकलाने का इलाज हैं?
+          <span class="faq-icon">＋</span>
+        </button>
+        <div class="faq-answer">
+          Herbal products को हकलाने का प्रमाणित इलाज नहीं
+          माना जाना चाहिए। बच्चों को कोई supplement देने से
+          पहले योग्य डॉक्टर से सलाह लें।
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false">
+          मैं अपने बच्चे की मदद कैसे कर सकता हूँ?
+          <span class="faq-icon">＋</span>
+        </button>
+        <div class="faq-answer">
+          बच्चे की बात धैर्य से सुनें, उसे बीच में न रोकें,
+          बोलने के लिए जल्दबाजी न कराएं और जरूरत होने पर
+          विशेषज्ञ से सलाह लें।
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false">
+          क्या यह order form वास्तव में order भेजता है?
+          <span class="faq-icon">＋</span>
+        </button>
+        <div class="faq-answer">
+          नहीं। यह अभी frontend demo है। वास्तविक order लेने
+          के लिए secure backend या order service जोड़नी होगी।
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FINAL MESSAGE -->
+
+<section class="final-message">
+  <div class="container">
+    <p class="section-tag">12 • A Message for Parents</p>
+
+    <h2>हर बच्चे की आवाज़ अनमोल है 💚</h2>
+
+    <p>
+      बच्चे को प्यार से सुनें, उसका आत्मविश्वास बढ़ाएं
+      और उसकी जरूरतों को समझें।
+    </p>
+
+    <p>
+      सही जानकारी और जरूरत के अनुसार professional support
+      के साथ बच्चे का साथ दें।
+    </p>
+
+    <a href="#home" class="btn btn-green">Back to Home ↑</a>
+  </div>
+</section>
+
+</main>
+
+<!-- FOOTER -->
+
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <h3>🌿 AyurVani</h3>
+        <p>
+          Herbal wellness information और परिवारों के लिए
+          supportive health education.
+        </p>
+      </div>
+
+      <div>
+        <h3>Quick Links</h3>
+        <div class="footer-links">
+          <a href="#home">Home</a>
+          <a href="#benefits">Benefits</a>
+          <a href="#herbs">Herbs</a>
+          <a href="#routine">Daily Routine</a>
+        </div>
+      </div>
+
+      <div>
+        <h3>Explore</h3>
+        <div class="footer-links">
+          <a href="#guidance">Professional Guidance</a>
+          <a href="#reviews">Parent Experiences</a>
+          <a href="#quality">Quality Information</a>
+          <a href="#faq">FAQs</a>
+          <a href="#contact">Contact Us</a>
+        </div>
+      </div>
+    </div>
+
+    <p class="disclaimer">
+      Disclaimer: यह वेबसाइट सामान्य जानकारी के लिए है,
+      medical diagnosis या treatment का विकल्प नहीं।
+      हकलाने के लिए योग्य speech-language therapist से
+      सलाह लें। बच्चों को herbal products या supplements
+      देने से पहले डॉक्टर से पूछें।
+    </p>
+
+    <div class="footer-bottom">
+      © <span id="year"></span> AyurVani. All rights reserved.
+    </div>
+  </div>
+</footer>
+
+<script>
+/* MOBILE NAVIGATION */
+
+const menuBtn = document.getElementById("menuBtn");
+const navbar = document.getElementById("navbar");
+
+menuBtn.addEventListener("click", function () {
+  const opened = navbar.classList.toggle("open");
+
+  menuBtn.setAttribute("aria-expanded", String(opened));
+  menuBtn.textContent = opened ? "✕" : "☰";
+});
+
+navbar.querySelectorAll("a").forEach(function (link) {
+  link.addEventListener("click", function () {
+    navbar.classList.remove("open");
+    menuBtn.setAttribute("aria-expanded", "false");
+    menuBtn.textContent = "☰";
+  });
+});
+
+/* FAQ ACCORDION */
+
+document.querySelectorAll(".faq-question").forEach(function (button) {
+  button.addEventListener("click", function () {
+    const item = button.closest(".faq-item");
+    const isOpen = item.classList.toggle("open");
+
+    button.setAttribute("aria-expanded", String(isOpen));
+  });
+});
+
+/* SCROLL REVEAL ANIMATION */
+
+const revealElements = document.querySelectorAll(".reveal");
+
+if ("IntersectionObserver" in window) {
+  const observer = new IntersectionObserver(function (entries) {
+    entries.forEach(function (entry) {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("visible");
+        observer.unobserve(entry.target);
+      }
+    });
+  }, {
+    threshold: 0.12
+  });
+
+  revealElements.forEach(function (element) {
+    observer.observe(element);
+  });
+} else {
+  revealElements.forEach(function (element) {
+    element.classList.add("visible");
+  });
+}
+
+/* CONTACT FORM DEMO */
+
+document.getElementById("contactForm").addEventListener(
+  "submit",
+  function (event) {
+    event.preventDefault();
+
+    const name = document.getElementById("customerName").value.trim();
+    const message = document.getElementById("formMessage");
+
+    message.textContent =
+      "धन्यवाद, " + name +
+      "! यह demo form है। आपका विवरण वास्तव में भेजा नहीं गया।";
+
+    this.reset();
+  }
+);
+
+/* CURRENT YEAR */
+
+document.getElementById("year").textContent =
+  new Date().getFullYear();
+</script>
+
+</body>
+</html>
+
+</body>
+</html>
