@@ -3,11 +3,12 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Ek Baat Dil Se 💌</title>
 
-<style>
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600&family=Poppins:wght@300;400;500&display=swap');
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@400;500;600&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
 
+<style>
 * {
     margin: 0;
     padding: 0;
@@ -15,183 +16,354 @@
 }
 
 body {
-    min-height: 100vh;
-    overflow-x: hidden;
     font-family: 'Poppins', sans-serif;
-    background: linear-gradient(135deg, #fff1f4, #fce1e9, #f8dce5);
-    color: #714b5b;
+    background: #fff4f7;
+    color: #765361;
+    overflow-x: hidden;
 }
 
-/* Background */
-.background {
+/* BACKGROUND */
+
+.bg {
     position: fixed;
     inset: 0;
-    overflow: hidden;
+    z-index: -2;
+    background: linear-gradient(135deg, #fff5f6, #fce2eb, #fff0e8);
+}
+
+.glow {
+    position: fixed;
+    width: 260px;
+    height: 260px;
+    border-radius: 50%;
+    filter: blur(80px);
+    opacity: .45;
+    z-index: -1;
+    animation: glowMove 8s ease-in-out infinite alternate;
+}
+
+.glow1 {
+    background: #ffb6ce;
+    top: -80px;
+    left: -80px;
+}
+
+.glow2 {
+    background: #f7c8d9;
+    bottom: -80px;
+    right: -80px;
+    animation-delay: 3s;
+}
+
+@keyframes glowMove {
+    from {
+        transform: translate(0, 0) scale(1);
+    }
+    to {
+        transform: translate(45px, 30px) scale(1.2);
+    }
+}
+
+/* FLOATING HEARTS */
+
+.floating {
+    position: fixed;
+    bottom: -40px;
     pointer-events: none;
+    animation: floatHeart linear forwards;
+    z-index: 0;
 }
 
-.heart {
-    position: absolute;
-    bottom: -30px;
-    color: rgba(216, 105, 145, 0.3);
-    animation: floatUp linear infinite;
-}
-
-@keyframes floatUp {
+@keyframes floatHeart {
     0% {
         transform: translateY(0) rotate(0deg);
         opacity: 0;
     }
-    15% { opacity: 0.7; }
-    85% { opacity: 0.5; }
+
+    15% {
+        opacity: .65;
+    }
+
     100% {
-        transform: translateY(-110vh) rotate(360deg);
+        transform: translateY(-110vh) rotate(180deg);
         opacity: 0;
     }
 }
 
-/* Main screen */
+/* MAIN */
+
 .container {
     min-height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 25px;
-    position: relative;
-    z-index: 1;
+    padding: 22px;
 }
 
 .card {
     width: 100%;
     max-width: 440px;
-    padding: 40px 25px;
+    padding: 38px 25px;
     text-align: center;
-    background: rgba(255, 255, 255, 0.66);
-    border: 1px solid rgba(255,255,255,0.8);
+
+    background: rgba(255,255,255,.62);
+    border: 1px solid rgba(255,255,255,.85);
     border-radius: 28px;
-    box-shadow: 0 20px 70px rgba(163, 87, 119, 0.13);
-    backdrop-filter: blur(12px);
-    animation: appear 1s ease;
+
+    backdrop-filter: blur(18px);
+    box-shadow: 0 25px 80px rgba(185,108,140,.13);
+
+    animation: cardEnter 1.2s cubic-bezier(.2,.8,.2,1);
 }
 
-@keyframes appear {
+@keyframes cardEnter {
     from {
         opacity: 0;
-        transform: translateY(25px);
+        transform: translateY(35px) scale(.94);
     }
     to {
         opacity: 1;
-        transform: translateY(0);
+        transform: translateY(0) scale(1);
     }
 }
 
+/* TOP HEART */
+
 .top-heart {
-    font-size: 48px;
-    margin-bottom: 20px;
-    animation: heartbeat 1.8s infinite;
+    font-size: 42px;
+    color: #d77d9e;
+    margin-bottom: 18px;
+    animation: heartbeat 2s ease-in-out infinite;
 }
 
 @keyframes heartbeat {
-    0%, 100% { transform: scale(1); }
-    50% { transform: scale(1.12); }
+    0%, 100% {
+        transform: scale(1);
+    }
+    15% {
+        transform: scale(1.12);
+    }
+    30% {
+        transform: scale(1);
+    }
+    45% {
+        transform: scale(1.08);
+    }
+}
+
+.small {
+    font-size: 10px;
+    letter-spacing: 4px;
+    color: #b98498;
+    text-transform: uppercase;
 }
 
 h1 {
     font-family: 'Playfair Display', serif;
-    font-size: 34px;
-    font-weight: 500;
-    color: #b45c7e;
-    margin-bottom: 15px;
-}
-
-.subtitle {
-    font-size: 13px;
-    letter-spacing: 2px;
-    color: #b98799;
-    margin-bottom: 25px;
+    font-size: 36px;
+    line-height: 1.4;
+    color: #a75577;
+    margin: 18px 0;
 }
 
 .intro {
-    font-size: 14px;
+    font-size: 13px;
     line-height: 2;
-    color: #795765;
-    margin-bottom: 25px;
+    color: #876879;
+    margin: 18px 0 26px;
 }
 
-button {
+/* BUTTON */
+
+.btn {
     border: none;
     padding: 14px 28px;
-    border-radius: 30px;
-    background: linear-gradient(135deg, #d7799d, #b85f83);
+    border-radius: 50px;
+
+    background: linear-gradient(135deg, #df92ae, #bd678b);
     color: white;
-    font-family: inherit;
-    font-size: 14px;
+
+    font-family: 'Poppins', sans-serif;
+    font-size: 13px;
+
     cursor: pointer;
-    box-shadow: 0 8px 20px rgba(184, 95, 131, 0.2);
-    transition: 0.3s;
+    box-shadow: 0 8px 24px rgba(190,103,141,.25);
+
+    transition: transform .35s,
+                box-shadow .35s,
+                background .35s;
 }
 
-button:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 12px 25px rgba(184, 95, 131, 0.3);
+.btn:hover {
+    transform: translateY(-4px) scale(1.03);
+    box-shadow: 0 14px 28px rgba(190,103,141,.3);
 }
 
-.message {
+.btn:active {
+    transform: scale(.96);
+}
+
+/* LETTER */
+
+.letter {
     display: none;
-    margin-top: 30px;
-    animation: appear 1s ease;
+    margin-top: 25px;
 }
 
-.message.show {
+.letter.show {
     display: block;
+    animation: letterReveal 1.2s ease forwards;
 }
 
-.message h2 {
+@keyframes letterReveal {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+        filter: blur(8px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+        filter: blur(0);
+    }
+}
+
+.paper {
+    padding: 24px 18px;
+    margin-top: 20px;
+
+    background: rgba(255,250,248,.9);
+    border: 1px solid #f3dfe6;
+    border-radius: 20px;
+
+    box-shadow: 0 12px 30px rgba(190,120,145,.08);
+}
+
+.paper h2 {
     font-family: 'Playfair Display', serif;
     font-size: 25px;
     font-weight: 500;
-    color: #b45c7e;
+    color: #b15e7f;
     margin-bottom: 20px;
 }
 
-.message p {
-    font-size: 14px;
+.paper p {
+    font-size: 13px;
     line-height: 2.1;
     margin-bottom: 18px;
-    color: #795765;
+    color: #795c6b;
 }
 
-.divider {
-    color: #d88ba8;
-    letter-spacing: 8px;
-    margin: 22px 0;
+.line {
+    color: #d58ba8;
+    letter-spacing: 6px;
+    margin: 20px 0;
 }
 
-.signature {
+/* TEXT REVEAL */
+
+.reveal {
+    opacity: 0;
+    transform: translateY(15px);
+    transition: all .8s ease;
+}
+
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* PROPOSAL */
+
+.proposal {
+    margin-top: 28px;
+    display: none;
+}
+
+.proposal.show {
+    display: block;
+    animation: letterReveal 1s ease;
+}
+
+.proposal h2 {
     font-family: 'Playfair Display', serif;
-    font-style: italic;
-    font-size: 20px;
-    color: #b45c7e;
-    margin-top: 20px;
+    color: #b45e7d;
+    font-size: 26px;
+    line-height: 1.5;
 }
+
+.proposal p {
+    font-size: 13px;
+    line-height: 1.9;
+    margin-top: 15px;
+}
+
+.buttons {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    flex-wrap: wrap;
+    margin-top: 22px;
+}
+
+.yes {
+    background: linear-gradient(135deg, #d982a2, #b75d81);
+}
+
+.time {
+    background: #f5e2e9;
+    color: #a45d79;
+    box-shadow: none;
+}
+
+/* RESULT */
+
+.result {
+    display: none;
+    margin-top: 25px;
+    padding: 20px;
+    border-radius: 18px;
+    background: #fff0f5;
+    line-height: 1.9;
+    font-size: 13px;
+}
+
+.result.show {
+    display: block;
+    animation: letterReveal .8s ease;
+}
+
+/* FOOTER */
 
 .footer {
-    font-size: 11px;
-    color: #c08b9e;
+    font-size: 10px;
+    color: #c08a9e;
+    letter-spacing: 2px;
     margin-top: 30px;
 }
 
-@media (max-width: 480px) {
+/* MOBILE */
+
+@media(max-width:480px) {
     .card {
-        padding: 32px 22px;
+        padding: 32px 20px;
     }
 
     h1 {
-        font-size: 29px;
+        font-size: 30px;
     }
 
-    .message h2 {
-        font-size: 23px;
+    .paper {
+        padding: 20px 15px;
+    }
+}
+
+/* Reduce animation for accessibility */
+
+@media(prefers-reduced-motion:reduce) {
+    *, *::before, *::after {
+        animation-duration: .01ms !important;
+        transition-duration: .01ms !important;
     }
 }
 </style>
@@ -199,124 +371,270 @@ button:hover {
 
 <body>
 
-<div class="background" id="background"></div>
+<div class="bg"></div>
+<div class="glow glow1"></div>
+<div class="glow glow2"></div>
 
 <div class="container">
-    <div class="card">
 
-        <div class="top-heart">♡</div>
+<div class="card">
 
-        <div class="subtitle">A LITTLE SOMETHING FOR YOU</div>
+    <div class="top-heart">♡</div>
 
-        <h1>Ek Baat Dil Se...</h1>
+    <div class="small">A little something from my heart</div>
 
-        <p class="intro">
-            Kuch baatein hoti hain jo roz nahi kahi jaati,
-            par dil mein hamesha rehti hain.
-            Aaj bas unhi mein se kuch tumhare saath share karni hain...
-        </p>
+    <h1>Hey Aryan,<br>Ek Baat Kehni Hai...</h1>
 
-        <button onclick="openMessage()" id="openBtn">
-            Open My Letter 💌
-        </button>
+    <p class="intro">
+        Kuch feelings aisi hoti hain jo words mein kehna
+        thoda mushkil hota hai...<br>
+        Par aaj socha, dil ki baat keh hi doon. 🌷
+    </p>
 
-        <div class="message" id="message">
+    <button class="btn" id="openBtn" onclick="openLetter()">
+        Open My Letter 💌
+    </button>
 
-            <div class="divider">✧ ♡ ✧</div>
+    <!-- LETTER -->
 
-            <h2>A Few Words For You</h2>
+    <div class="letter" id="letter">
 
-            <p>
-                Kabhi kabhi zindagi mein kuch log aise milte hain
-                jinki presence hi din ko thoda better bana deti hai.
-                Unse baat karke mood achha ho jaata hai,
-                aur unki chhoti chhoti baatein bhi yaad reh jaati hain.
+        <div class="line">✧ ♡ ✧</div>
+
+        <div class="paper">
+
+            <h2>Dear Aryan,</h2>
+
+            <p class="reveal">
+                Pata nahi kaise shuru karun,
+                bas itna pata hai ki kuch baatein
+                kaafi time se dil mein hain
+                jo aaj tumse kehna chahti hoon.
             </p>
 
-            <p>
-                Shayad har feeling ko perfect words mein explain nahi kiya ja sakta.
-                Bas itna kehna hai ki tumhari friendship,
-                tumhari baatein aur tumhara saath
-                mere liye genuinely special hai.
+            <p class="reveal">
+                Kabhi kabhi kisi ki chhoti si baat,
+                ek simple sa message ya uska saath
+                bhi din ko achha bana deta hai.
+                Aur kuch log dheere-dheere
+                apni life mein special jagah bana lete hain.
             </p>
 
-            <p>
-                I hope tum hamesha khush raho,
-                tumhare saare dreams poore hon,
-                aur life tumhe bahut saari beautiful memories de.
+            <p class="reveal">
+                Tum unhi special logon mein se ho.
+                Tumse baat karna, tumhari chhoti chhoti baatein,
+                aur tumhare saath share kiye gaye moments
+                mujhe genuinely achhe lagte hain.
             </p>
 
-            <p>
-                Aur jab bhi life thodi difficult lage,
-                yaad rakhna ki tumhari value
-                kisi ek din, kisi ek achievement
-                ya kisi ek opinion se decide nahi hoti.
+            <p class="reveal">
+                Main koi perfect words nahi dhoondh rahi,
+                bas honestly apni feelings bata rahi hoon.
+                I think you're a wonderful person,
+                and I'd really like to know you better.
             </p>
 
-            <div class="divider">✧ ♡ ✧</div>
-
-            <h2>Stay Happy, Always 🌷</h2>
-
-            <p>
-                Some people make ordinary moments feel memorable.
-                I hope life gives you endless reasons to smile
-                and beautiful moments to remember.
+            <p class="reveal">
+                Agar tum bhi aisa feel karte ho,
+                toh shayad hum is beautiful feeling ko
+                ek chance de sakte hain...
+                bina kisi pressure ke,
+                bas honestly aur naturally. ♡
             </p>
 
-            <div class="signature">
-                With lots of good wishes ♡
-            </div>
+            <div class="line">✧ ♡ ✧</div>
+
+            <h2 class="reveal">One little question...</h2>
+
+            <p class="reveal">
+                Would you like to give this feeling
+                a chance? 💗
+            </p>
 
         </div>
 
-        <div class="footer">
-            Made with care & a little bit of magic ✨
+        <!-- BUTTONS -->
+
+        <div class="proposal" id="proposal">
+
+            <div class="buttons">
+
+                <button class="btn yes" onclick="showYes()">
+                    Yes, let's see ❤️
+                </button>
+
+                <button class="btn time" onclick="showTime()">
+                    I need some time 🌷
+                </button>
+
+            </div>
+
+            <div class="result" id="result"></div>
+
         </div>
 
     </div>
+
+    <div class="footer">
+        MADE WITH CARE & A LITTLE COURAGE ✨
+    </div>
+
+</div>
 </div>
 
 <script>
-// Open letter
-function openMessage() {
-    const message = document.getElementById("message");
-    const button = document.getElementById("openBtn");
 
-    message.classList.add("show");
-    button.style.display = "none";
-
-    message.scrollIntoView({
-        behavior: "smooth",
-        block: "nearest"
-    });
-}
-
-// Floating hearts
-const background = document.getElementById("background");
+/* FLOATING HEARTS */
 
 function createHeart() {
+
     const heart = document.createElement("div");
-    heart.className = "heart";
+    heart.className = "floating";
 
-    const hearts = ["♡", "♥", "❤", "✧"];
-    heart.innerHTML = hearts[Math.floor(Math.random() * hearts.length)];
+    const symbols = ["♡", "♥", "✧", "❀", "💗"];
 
-    heart.style.left = Math.random() * 100 + "%";
-    heart.style.fontSize = (12 + Math.random() * 22) + "px";
+    heart.innerText =
+        symbols[Math.floor(Math.random() * symbols.length)];
 
-    const duration = 5 + Math.random() * 6;
-    heart.style.animationDuration = duration + "s";
+    heart.style.left = Math.random() * 100 + "vw";
+    heart.style.fontSize = (12 + Math.random() * 20) + "px";
+    heart.style.animationDuration = (5 + Math.random() * 7) + "s";
 
-    background.appendChild(heart);
+    document.body.appendChild(heart);
 
     setTimeout(() => {
         heart.remove();
-    }, duration * 1000);
+    }, 12000);
 }
 
-setInterval(createHeart, 450);
+setInterval(createHeart, 500);
+
+
+/* LETTER OPEN */
+
+function openLetter() {
+
+    const letter = document.getElementById("letter");
+    const button = document.getElementById("openBtn");
+
+    button.style.display = "none";
+    letter.classList.add("show");
+
+    setTimeout(() => {
+
+        const texts = document.querySelectorAll(".reveal");
+
+        texts.forEach((text, index) => {
+
+            setTimeout(() => {
+                text.classList.add("active");
+            }, index * 450);
+
+        });
+
+    }, 300);
+
+    setTimeout(() => {
+
+        document.getElementById("proposal").classList.add("show");
+
+    }, 3200);
+
+}
+
+
+/* YES RESPONSE */
+
+function showYes() {
+
+    const result = document.getElementById("result");
+
+    result.innerHTML = `
+        <div style="font-size:30px;margin-bottom:12px;">💗 ✨ 💗</div>
+        <h3 style="color:#b45e7d;font-family:'Playfair Display',serif;">
+            A beautiful beginning...
+        </h3>
+        <p>
+            Thank you for being honest about your feelings.
+            Let's take things slowly, get to know each other,
+            and make beautiful memories along the way. 🌷
+        </p>
+    `;
+
+    result.classList.add("show");
+    createBurst();
+}
+
+
+/* TIME RESPONSE */
+
+function showTime() {
+
+    const result = document.getElementById("result");
+
+    result.innerHTML = `
+        <div style="font-size:30px;margin-bottom:12px;">🌷</div>
+        <h3 style="color:#b45e7d;font-family:'Playfair Display',serif;">
+            That's absolutely okay.
+        </h3>
+        <p>
+            Feelings deserve honesty and time.
+            Take all the time you need,
+            and never feel pressured to answer.
+        </p>
+    `;
+
+    result.classList.add("show");
+}
+
+
+/* HEART BURST */
+
+function createBurst() {
+
+    for(let i = 0; i < 18; i++) {
+
+        const heart = document.createElement("div");
+
+        heart.innerHTML = ["💗","♡","✨","💕"][
+            Math.floor(Math.random() * 4)
+        ];
+
+        heart.style.position = "fixed";
+        heart.style.left = "50%";
+        heart.style.top = "50%";
+        heart.style.fontSize = "22px";
+        heart.style.pointerEvents = "none";
+        heart.style.zIndex = "999";
+
+        document.body.appendChild(heart);
+
+        const x = (Math.random() - .5) * 350;
+        const y = (Math.random() - .5) * 500;
+
+        heart.animate([
+            {
+                transform: "translate(-50%,-50%) scale(0)",
+                opacity: 0
+            },
+            {
+                transform: `translate(${x}px,${y}px) scale(1.3)`,
+                opacity: 1
+            },
+            {
+                transform: `translate(${x*1.5}px,${y*1.5}px) scale(.5)`,
+                opacity: 0
+            }
+        ], {
+            duration: 1300,
+            easing: "ease-out"
+        });
+
+        setTimeout(() => heart.remove(), 1400);
+    }
+}
+
 </script>
 
 </body>
-          </html>
-      
+    </html>
