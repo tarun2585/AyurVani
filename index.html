@@ -9,44 +9,51 @@
 .wrap{min-height:100vh;display:grid;place-items:center;padding:22px}.card{width:min(100%,560px);padding:clamp(22px,6vw,42px);border:1px solid #ffffffb5;border-radius:28px;background:#fff9f6d9;box-shadow:0 18px 55px #a34f7519;text-align:center;backdrop-filter:blur(8px);position:relative;z-index:1}
 .kicker{font-size:11px;letter-spacing:3px;text-transform:uppercase;color:#b46b88}.title{font:600 clamp(30px,8vw,46px) 'Playfair Display',serif;line-height:1.3;margin:14px 0}.script{font:700 clamp(38px,10vw,60px) 'Dancing Script',cursive;color:#c04f82}.letter{font-size:14px;line-height:2;margin:22px 0;color:#774e60}.name{font-weight:500;color:#ad456f}.buttons{display:flex;justify-content:center;align-items:center;gap:12px;flex-wrap:wrap;margin-top:24px}.btn{border:0;border-radius:50px;padding:13px 25px;font:500 14px Poppins;cursor:pointer;transition:transform .2s,box-shadow .2s}.btn:hover{transform:translateY(-2px)}.yes{background:linear-gradient(135deg,#d65b91,#b9477c);color:white;box-shadow:0 8px 22px #ce578333}.no{background:#fff;color:#9b5574;border:1px solid #ecc5d5}.screen{display:none}.screen.active{display:block;animation:fade .6s ease}@keyframes fade{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
 .heart{font-size:46px;animation:pulse 1.8s infinite}@keyframes pulse{50%{transform:scale(1.1)}}.float{position:fixed;bottom:-30px;pointer-events:none;animation:rise 7s linear forwards;z-index:0}@keyframes rise{to{transform:translateY(-110vh) rotate(25deg);opacity:0}}
-.gallery{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin:20px 0}.frame{background:#fff;padding:7px;border-radius:12px;box-shadow:0 5px 16px #80415b20;aspect-ratio:1;overflow:hidden}.frame img{width:100%;height:100%;object-fit:cover;border-radius:7px}.placeholder{height:100%;display:grid;place-items:center;background:linear-gradient(135deg,#f7d8e4,#fbe9dc);color:#a26983;font-size:13px;padding:10px}.hidden{display:none!important}.note{font-size:12px;color:#a07889;margin-top:16px}.footer{font-size:11px;color:#b58298;margin-top:18px}
+.gallery{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin:20px 0}.frame{background:#fff;padding:7px;border-radius:12px;box-shadow:0 5px 16px #80415b20;aspect-ratio:1;overflow:hidden}.frame img{width:100%;height:100%;object-fit:cover;border-radius:7px}.hidden{display:none!important}.note{font-size:12px;color:#a07889;margin-top:16px}.footer{font-size:11px;color:#b58298;margin-top:18px}.photoError{font-size:12px;color:#a07889;padding:10px}
 </style></head><body>
 <div class="wrap"><main class="card">
 <section class="screen active" id="proposal">
 <div class="kicker">a little courage, a lot of feelings</div><div class="heart">💗</div>
 <h1 class="title">Aryan Singh Shekhawat,<br><span class="script">ek baat dil se...</span></h1>
 <div class="letter">
-<p>M apse kuch kehna chahti hai—shayad words kabhi meri feelings ko poori tarah explain na kar paayein, phir bhi aaj dil ki baat keh rahi hoon.</p>
+<p>Main aapse kuch kehna chahti hoon—shayad words kabhi meri feelings ko poori tarah explain na kar paayein, phir bhi aaj dil ki baat keh rahi hoon.</p>
 <p>Main tumhare saath apni life ke khoobsurat pal share karna chahti hoon—khushiyon mein saath hasna, mushkil waqt mein ek-doosre ko samajhna, chhoti-chhoti baaton ko yaadgar banana aur ek doosre ki growth ka saath dena.</p>
-<p><span class="name">Shimlesh Bari</span> tumhe bahut pyaar karti hai. Mere liye tum khaas ho, aur main chahti hoon ki hum ek doosre ko care, honesty, respect aur samajh ke saath jaanne aur apni memories banane ka mauka dein Aryan m apse bhut jyda pyr krti hu aur m apko hamesha khush dekhna chahti hu .</p>
-  <h3> Ek proposal meri traf se m apke sath apna har din khas bana chahti hu </h3>
+<p><span class="name">Shimlesh Bari</span> tumhe bahut pyaar karti hai. Mere liye tum khaas ho, aur main chahti hoon ki hum ek doosre ko care, honesty, respect aur samajh ke saath jaanne aur apni memories banane ka mauka dein. Aryan, main tumse bahut zyada pyaar karti hoon aur tumhe hamesha khush dekhna chahti hoon.</p>
+<h3>Ek proposal meri taraf se—main tumhare saath apna har din khaas banana chahti hoon.</h3>
 <p class="script" style="font-size:34px">So... ek sawaal hai ✨</p>
 </div>
-<h2 class="title" style="font-size:clamp(22px,6vw,32px)">Kya tum mere saath apni poori life spend karna chahoge?
-Mujhe apke sath apni har khushi har dhuk aur baat share krni </h2>
-  <h3> So Aryan Singh Shekhawat kya ap mujhe as a girlfriend nhi balki as your life partner as your wife as your well wisher choose kroge agr haa hai toh yes pe click kro aur na hai toh no pe click kro apka har decision respectful hoga mere life </h3>
-<div class="buttons"><button class="btn yes" onclick="sayYes()">Yes 💖</button><button class="btn no" id="noBtn" onclick="sayNo()">No 🙈</button></div>
+<h2 class="title" style="font-size:clamp(22px,6vw,32px)">Kya tum mere saath apni poori life spend karna chahoge? Main tumhare saath apni har khushi, har dukh aur har baat share karna chahti hoon.</h2>
+<h3>So Aryan Singh Shekhawat, kya tum mujhe sirf girlfriend nahi, balki apni life partner, wife aur well-wisher ke roop mein choose karoge? Agar haan, toh Yes par click karna. Agar nahi, toh No par click karna—tumhara har decision respectful hoga.</h3>
+<div class="buttons"><button type="button" class="btn yes" onclick="sayYes()">Yes 💖</button><button type="button" class="btn no" id="noBtn" onclick="sayNo()">No 🙈</button></div>
 <p class="note" id="noNote">“Shimlesh ke proposal ko reject mat kro 😭” (mazaak!)</p>
 </section>
 <section class="screen" id="yesScreen"><div class="heart">💞✨💞</div><div class="kicker">a happy little moment</div><h1 class="title">Thank you for opening<br><span class="script">this little surprise!</span></h1><p class="letter">Yeh kuch yaadein hain jo main share karna chahti thi. 💗</p>
-<div class="gallery" id="gallery"></div><p class="letter">Har photo apni ek chhoti si story rakhti hai. 🌷</p><button class="btn no" onclick="backToQuestion()">Back to question</button><p class="footer">Made with love by Shimlesh ✨</p></section>
-<section class="screen" id="noScreen"><div class="heart">😅🌷</div><h1 class="title">Arre, koi baat nahi!</h1><p class="letter">Proposal ka jawab jo bhi ho, tumhari choice important hai. Shimlesh ki taraf se ek smile aur good wishes. 💗</p><button class="btn no" onclick="backToQuestion()">Back</button></section>
+<div class="gallery" id="gallery"></div><p class="letter">Har photo apni ek chhoti si story rakhti hai. 🌷</p><button type="button" class="btn no" onclick="backToQuestion()">Back to question</button><p class="footer">Made with love by Shimlesh ✨</p></section>
+<section class="screen" id="noScreen"><div class="heart">😅🌷</div><h1 class="title">Arre, koi baat nahi!</h1><p class="letter">Proposal ka jawab jo bhi ho, tumhari choice important hai. Shimlesh ki taraf se ek smile aur good wishes. 💗</p><button type="button" class="btn no" onclick="backToQuestion()">Back</button></section>
 </main></div>
 <script>
-// Replace these names with your photo filenames (keep photos in the same folder as this HTML file).
-const photos=['ourphoto1.jpg','ourphoto2.jpg','ourphoto3.jpg','ourphoto4.jpg'];
-const gallery=document.getElementById('gallery');
-photos.forEach((file,i)=>{const f=document.createElement('div');f.className='frame';if(file.startsWith('ourphoto'))f.innerHTML='<div class="placeholder">Add your photo '+(i+1)+' here 📷</div>';else f.innerHTML='<img src="'+file+'" alt="Our memory">';gallery.appendChild(f)});
-function show(id){document.querySelectorAll('.screen').forEach(s=>s.classList.remove('active'));document.getElementById(id).classList.add('active')}
-function sayYes(){show('yesScreen');for(let i=0;i<24;i++){setTimeout(()=>heart(),i*120)}}
-function sayNo(){show('noScreen')}
-function backToQuestion(){show('proposal')}
-function heart(){const h=document.createElement('span');h.className='float';h.textContent=['💗','💕','🌸','✨'][Math.floor(Math.random()*4)];h.style.left=Math.random()*100+'vw';h.style.fontSize=(16+Math.random()*22)+'px';h.style.animationDuration=(4+Math.random()*4)+'s';document.body.appendChild(h);setTimeout(()=>h.remove(),8500)}
-setInterval(heart,900);
-  const photos=[
+// Photo files must be in the SAME folder as this HTML file.
+const photos=[
 'IMG-20261125-WA0079.jpg',
-    'IMG-20261125-WA0078.jpg',
-    'IMG-20261125-WA0077.jpg',
-    'IMG-20261125-WA0076.jpg'
+'IMG-20261125-WA0078.jpg',
+'IMG-20261125-WA0077.jpg',
+'IMG-20261125-WA0076.jpg'
 ];
+const gallery=document.getElementById('gallery');
+photos.forEach((file,i)=>{
+  const frame=document.createElement('div');
+  frame.className='frame';
+  const img=document.createElement('img');
+  img.src=file;
+  img.alt='Our memory '+(i+1);
+  img.onerror=()=>{frame.innerHTML='<div class="photoError">Photo not found: '+file+'</div>';};
+  frame.appendChild(img);
+  gallery.appendChild(frame);
+});
+function show(id){document.querySelectorAll('.screen').forEach(s=>s.classList.remove('active'));document.getElementById(id).classList.add('active');window.scrollTo({top:0,behavior:'smooth'});}
+function sayYes(){show('yesScreen');for(let i=0;i<24;i++){setTimeout(()=>heart(),i*120);}}
+function sayNo(){show('noScreen');}
+function backToQuestion(){show('proposal');}
+function heart(){const h=document.createElement('span');h.className='float';h.textContent=['💗','💕','🌸','✨'][Math.floor(Math.random()*4)];h.style.left=Math.random()*100+'vw';h.style.fontSize=(16+Math.random()*22)+'px';h.style.animationDuration=(4+Math.random()*4)+'s';document.body.appendChild(h);setTimeout(()=>h.remove(),8500);}
+setInterval(heart,900);
 </script></body></html>
